@@ -16,10 +16,10 @@ class Users(models.Model):
 
 class Image(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
-    file_name = models.CharField(max_length=300)
+    file_name = models.CharField(max_length=20)
     description = models.CharField(max_length=100, null=True, blank=True)
     date_posted = models.DateTimeField()
-    post_location = models.URLField(null=True, blank=True)
+    post_location = models.URLField
     whitelist = models.URLField()
 
     class Meta:
