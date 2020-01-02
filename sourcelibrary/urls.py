@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-  path('sauceprotecc/', include('sauceprotecc.urls')), path('admin/', admin.site.urls),
+  path('admin/', admin.site.urls),
+  path('', include('sauceprotecc.urls')),
   ]
 
