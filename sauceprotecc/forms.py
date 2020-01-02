@@ -1,7 +1,15 @@
-from django import forms
 
-class UploadForm(forms.Form):
-  post_location = forms.URLField
+from django.forms import ModelForm
+from django.forms.widgets import TextInput
+from sauceprotecc.models import Image
+
+class UploadForm(ModelForm):
+    
+    class Meta:
+        model = Image
+        URLfield = ('post_location',)
+        fields = ('description',)
+
 
 
 

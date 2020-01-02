@@ -15,16 +15,17 @@ class Users(models.Model):
         return 
 
 class Image(models.Model):
-    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    # user = models.ForeignKey(Users, on_delete=models.CASCADE)
     file_name = models.CharField(max_length=20)
     description = models.CharField(max_length=100, null=True, blank=True)
-    date_posted = models.DateTimeField()
+    date_posted = models.DateTimeField(null=True, blank=True)
     post_location = models.URLField
     whitelist = models.URLField()
 
     class Meta:
         db_table = 'Image'
-        ordering = ["user", "description", "file_name", "date_posted", "whitelist"]
+        ordering = ["description", "file_name", "date_posted", "whitelist"]
+        # ordering = ["user", "description", "file_name", "date_posted", "whitelist"]
 
     def __str__(self):
         return self.file_name
