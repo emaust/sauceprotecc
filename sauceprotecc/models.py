@@ -23,6 +23,7 @@ class Image(models.Model):
     whitelist = models.URLField()
 
     class Meta:
+        db_table = 'Image'
         ordering = ["user", "description", "file_name", "date_posted", "whitelist"]
 
     def __str__(self):
