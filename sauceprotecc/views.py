@@ -11,7 +11,7 @@ class UploadImage(forms.Form):
     fields = '__all__'
 
 def index(request):
-    return HttpResponse("This string represents the content of the httpresponse")
+    return HttpResponse("Home page")
 
 def upload(request):
 
@@ -28,3 +28,11 @@ def upload(request):
         form = UploadForm()
     return render(request, 'upload.html', {form: form})
 
+def results(request):
+    return HttpResponse("Results page")
+
+def profile(request):
+    return HttpResponse("Profile page")
+
+def login(request):
+    return HttpResponse("Login page")
