@@ -19,7 +19,10 @@ def upload(request):
         form = UploadForm(request.POST)
         if form.is_valid():
             form.save()
+            print(form)
             return redirect('/upload/')
+        else:
+            print("Upload failed")
 
     else:
         form = UploadForm()

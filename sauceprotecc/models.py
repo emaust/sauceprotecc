@@ -21,8 +21,8 @@ class Image(models.Model):
     file_name = models.CharField(max_length=20)
     description = models.CharField(max_length=100, null=True, blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
-    post_location = models.URLField(max_length=200, null=True, blank=True)
-    whitelist = models.URLField()
+    image_address = models.URLField(default="not provided", max_length=200)
+    whitelist = models.URLField(default="not provided", null=True, blank=True)
 
     class Meta:
         db_table = 'Image'

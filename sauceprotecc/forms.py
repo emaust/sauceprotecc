@@ -8,7 +8,7 @@ from sauceprotecc.models import Image
 class UploadForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ('description', 'post_location',)
+        fields = ('description', 'image_address', 'whitelist', 'file_name',)
 
 form = UploadForm()
     
