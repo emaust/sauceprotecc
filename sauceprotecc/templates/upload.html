@@ -1,15 +1,31 @@
 
-<!-- <form action= "/upload/" method="post">
-  
-  <input type = "submit" value="Upload"></input>
-</form> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contents="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload</title>
+  </head>
 
-<form action="/upload/" method="post">
-  {% csrf_token %}
-  {{ form }}
-  <label for="post_location">Image Address: </label>
-  <input id="post_location" type="text" post_location="post_location" value="{{ current_name }}"></input>
-  <label for="description">Description:</label>
-  <input type = "text"></input>
-  <input type="submit" value="Submit">
-</form>
+  <body>
+    
+    <form action='/upload/' method="post">{% csrf_token %}
+      <input type="hidden" id="csrf_token" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+      
+      <label for="file_name">Name of Image (including file type):</label>  
+      <input type="text" name="file_name"></input>
+
+      <label for="image_address">Image address:</label>  
+      <input type="text" name="image_address"></input>
+
+      <label for="whitelist">Site posted (optional):</label>
+      <input type="text" name="whitelist"></input>
+
+      <label for="description">Description (optional):</label>  
+      <input type="text" name="description"></input>  
+      
+      <input type="submit" value="Upload"></input>
+    </form>
+
+  </body>
+</html>

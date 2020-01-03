@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+from django.core.validators import RegexValidator
 
 # Create your models here.
 class Users(models.Model):
@@ -18,9 +20,9 @@ class Image(models.Model):
     # user = models.ForeignKey(Users, on_delete=models.CASCADE)
     file_name = models.CharField(max_length=20)
     description = models.CharField(max_length=100, null=True, blank=True)
-    date_posted = models.DateTimeField(null=True, blank=True)
-    post_location = models.URLField
-    whitelist = models.URLField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    image_address = models.URLField(default="not provided", max_length=200)
+    whitelist = models.URLField(default="not provided", null=True, blank=True)
 
     class Meta:
         db_table = 'Image'

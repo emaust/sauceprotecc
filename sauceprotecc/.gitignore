@@ -88,7 +88,12 @@ venv.bak/
 
 # mypy 
 .mypy_cache/ 
-
+*.log
+*.pot
+*.pyc
+*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
 # Sublime Text # 
 *.tmlanguage.cache 
 *.tmPreferences.cache 
@@ -112,4 +117,7 @@ GitHub.sublime-settings
 !.vscode/tasks.json 
 !.vscode/launch.json 
 !.vscode/extensions.json 
+
+# random
 .history
+migrations/
