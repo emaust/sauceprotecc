@@ -21,7 +21,7 @@ def upload(request):
     if request.method == 'POST':
         form = UploadForm(request.POST)
         if form.is_valid():
-            image = form.save()
+            form.save()
             return redirect('/upload/')
 
     else:
