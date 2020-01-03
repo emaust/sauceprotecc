@@ -8,12 +8,12 @@
   </head>
 
   <body>
-    <!-- <form action="/upload/" method="post"> -->
+    
     <form action='/upload/' method="post">{% csrf_token %}
       <input type="hidden" id="csrf_token" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
       
       <label for="post_location">Image site address:</label>  
-      <input type="text" placeholder="" value="{% if post_location %}{{ post_location }}{% endif %}" name="post_location">
+      <input type="text" name="post_location"></input>
 
       <label for="description">Description:</label>  
       <input type="text" name="description"></input>  
