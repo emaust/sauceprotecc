@@ -4,6 +4,8 @@ from django import forms
 from django.http import HttpResponseRedirect 
 from sauceprotecc.forms import UploadForm
 from sauceprotecc.models import Image
+from django.core.exceptions import ValidationError
+
 
 class UploadImage(forms.Form):
 
@@ -14,7 +16,6 @@ def index(request):
     return HttpResponse("Home page")
 
 def upload(request):
-
     if request.method == 'POST':
         form = UploadForm(request.POST)
         if form.is_valid():
@@ -22,8 +23,11 @@ def upload(request):
             print(form)
             return redirect('/upload/')
         else:
-            print("Upload failed")
-
+          for e in form.errors['file_name'].as_data():
+            print(e)
+          # [u'Image name must be unique. testing']
+        #     raise forms.ValidationError('Address must be a url')
+          # print(form)
     else:
         form = UploadForm()
     return render(request, 'upload.html', {form: form})

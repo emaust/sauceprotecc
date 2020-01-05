@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
-from django.core.validators import RegexValidator
+from django.core.exceptions import ValidationError
+# from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class Users(models.Model):
@@ -18,7 +19,7 @@ class Users(models.Model):
 
 class Image(models.Model):
     # user = models.ForeignKey(Users, on_delete=models.CASCADE)
-    file_name = models.CharField(max_length=20)
+    file_name = models.CharField(max_length=20, unique=True, default="")
     description = models.CharField(max_length=100, null=True, blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     image_address = models.URLField(default="not provided", max_length=200)
@@ -31,6 +32,10 @@ class Image(models.Model):
 
     def __str__(self):
         return self.file_name
+
+    def save(self, *args,**kwargs):
+        self.validate_unique()
+        super(Image,self).save(*args, **kwargs) 
 
 class Flagged(models.Model):
     images = models.ManyToManyField(Image)

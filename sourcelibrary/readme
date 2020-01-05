@@ -2,3 +2,9 @@ Dependencies:
   Cloud Vision API
     - Cloud SDK (https://cloud.google.com/sdk/docs/)
     - Vision API Client Library (https://cloud.google.com/sdk/docs/)
+  
+  For testing:
+    Coverage.py
+      - https://coverage.readthedocs.io/en/latest/
+    factory_boy
+      - https://factoryboy.readthedocs.io/en/latest/
