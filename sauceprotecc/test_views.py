@@ -4,7 +4,6 @@ from django.test import Client
 from django.http import HttpRequest
 from . import views
 
-
 class IndexPageTests(SimpleTestCase):
   def test_index_page_status_code(self):
     response = self.client.get('/')
