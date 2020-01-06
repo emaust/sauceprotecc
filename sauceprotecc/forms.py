@@ -12,9 +12,10 @@ class UploadForm(forms.ModelForm):
         fields = ('description', 'image_address', 'whitelist', 'file_name',)
 
     
-    def clean(self):
-        cleaned_data = super(UploadForm, self).clean()
-        return cleaned_data
+    # def clean(self):
+    #     cleaned_data = super(UploadForm, self).clean()
+    #     return cleaned_data
+
 
 
 

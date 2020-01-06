@@ -23,8 +23,7 @@ def upload(request):
             print(form)
             return redirect('/upload/')
         else:
-          for e in form.errors['file_name'].as_data():
-            print(e)
+          raise ValidationError(("Error"))
           # [u'Image name must be unique. testing']
         #     raise forms.ValidationError('Address must be a url')
           # print(form)

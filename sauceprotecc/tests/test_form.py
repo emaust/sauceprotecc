@@ -1,11 +1,17 @@
+
 from sauceprotecc.forms import UploadForm
 from sauceprotecc.models import Image
+from django.test import SimpleTestCase
 from django.test import TestCase
 from django.test import Client
 from django.utils import timezone
+from django import forms
+from django.forms import ModelForm
 
 
-# class UploadFormTest(TestCase):
+class UploadFormTest(TestCase):
+    def test_valid_form(self):
+        self.assertFieldOutput(UploadFormTest, {'http://wwww.potato.com': 'http://wwww.potato.com'}, {'':['Address entered must be a URL.']})
 
 #   def test_valid_address(self):
 #       t=timezone.now()
