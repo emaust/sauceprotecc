@@ -1,10 +1,12 @@
 Dependencies:
-  Cloud Vision API
+ 1.  Cloud Vision API
     - Cloud SDK (https://cloud.google.com/sdk/docs/)
     - Vision API Client Library (https://cloud.google.com/sdk/docs/)
   
+  2. Bootstrap
+
   For testing:
-    Coverage.py
+    1. Coverage.py
       - https://coverage.readthedocs.io/en/latest/
-    factory_boy
+    2. factory_boy
       - https://factoryboy.readthedocs.io/en/latest/
