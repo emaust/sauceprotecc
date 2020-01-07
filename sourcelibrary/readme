@@ -2,11 +2,14 @@ Dependencies:
  1.  Cloud Vision API
     - Cloud SDK (https://cloud.google.com/sdk/docs/)
     - Vision API Client Library (https://cloud.google.com/sdk/docs/)
-  
-  2. Bootstrap
+    - google-api-python-Client (https://github.com/googleapis/google-api-python-client)
+    - google-cloud-storage 1.24.1 (https://pypi.org/project/google-cloud-storage/)
+    - pycrypto
+    - pyopenssl
 
-  For testing:
-    1. Coverage.py
-      - https://coverage.readthedocs.io/en/latest/
-    2. factory_boy
-      - https://factoryboy.readthedocs.io/en/latest/
+  2. Bootstrap
+  3. Pillow (https://pypi.org/project/Pillow/)
+
+  4. Coverage.py (https://coverage.readthedocs.io/en/latest/)
+  5. factory_boy (https://factoryboy.readthedocs.io/en/latest/)
+  
