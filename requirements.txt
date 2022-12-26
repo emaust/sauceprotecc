@@ -63,5 +63,5 @@ virtualenvwrapper==4.8.4
 waitress==1.4.3
 WebOb==1.8.5
 WebTest==2.0.33
-wheel==0.33.6
+wheel==0.38.1
 wrapt==1.11.2
